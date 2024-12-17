@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <title>Biblioteka programisty</title>
+</head>
+<body>
+  <header class="header">
+    <img src="../static/img/logo.svg" alt="logo" width="30" height="30">
+    <ul class="main-list">
+        <li class="list__item">
+          <a href="">
+            <img src="../static/img/login.svg" alt="login" width="20" height="20">
+          </a>
+    </ul>
+  </header>
+  <main class='main-login'>
+    {% block content %}
+        <form action="{{ url_for('login')}}" method="post" class="login">
+            <p class="error"> {{ error }}</p>
+            <label for="email">
+                <input type='email' name="email" id="email" placeholder="Email" class="form__input">
+            </label>
+            <label for="password">
+                <input type='password' name="password" id="password" placeholder="password" class="form__input">
+            </label>
+            <button type="submit" class="form__button">Zaloguj</button>
+            <a href="/reg" class='form__button reg__link'>Zarejestruj się</a>
+        </form>
+    {% endblock %}
+  </main>
+  <footer>
+
+  </footer>
+</body>
+</html>
